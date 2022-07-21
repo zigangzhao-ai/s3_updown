@@ -1,5 +1,8 @@
 # !/usr/bin/python
 # -*- coding: UTF-8- -*-
+"""
+使用boto3的client方法去列举和下载，需要借助生成器，才能获取到全部文件
+"""
 from boto3.session import Session
 import boto3
 import os
@@ -54,7 +57,7 @@ if __name__ == '__main__':
     secret_key = ""
     url = ""
     bucket_name = ""
-    prefix = "" #指定的bucket路径
+    prefix = "" 
 
     session = Session(access_key, secret_key)
     s3_client = session.client('s3', endpoint_url=url)
